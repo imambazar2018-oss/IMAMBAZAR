@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="IMAM BAZAR — ইলেকট্রনিক্স পণ্য, যন্ত্রাংশ ও অনলাইন অর্ডার।">
+  <meta name="theme-color" content="#0f3d91">
+  <title>IMAM BAZAR | Electronics Shop</title>
+  <style>
+    :root{--blue:#1246a0;--deep:#0a2457;--orange:#ffb52e;--bg:#f4f7fb;--ink:#17243b;--muted:#65738a;--line:#e0e7f0}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,"Noto Sans Bengali","Hind Siliguri",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+    a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.wrap{max-width:1150px;margin:auto;padding:0 18px}
+    .top{background:var(--deep);color:#fff;font-size:13px;padding:8px 0}.top .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    header{background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 3px 14px #122b5010}.head{display:flex;align-items:center;gap:18px;padding:14px 0}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:22px;color:var(--deep);white-space:nowrap}.logo-mark{display:grid;place-items:center;width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,var(--blue),#2779db);color:#fff;font-size:23px}
+    .search{flex:1;display:flex;min-width:130px}.search input{width:100%;border:1px solid var(--line);border-radius:10px 0 0 10px;padding:12px;outline-color:var(--blue)}.search button{border:0;background:var(--blue);color:#fff;padding:0 17px;border-radius:0 10px 10px 0;cursor:pointer}
+    .cart-btn,.primary,.secondary{border:0;border-radius:10px;padding:11px 15px;cursor:pointer;font-weight:750}.cart-btn,.primary{background:var(--orange);color:#1d2b45}.secondary{background:var(--blue);color:white}
+    .hero{margin:22px auto 24px;background:linear-gradient(115deg,#0a2457,#1246a0 65%,#2a7ed2);border-radius:22px;overflow:hidden;color:#fff;display:grid;grid-template-columns:1.3fr .7fr;min-height:260px}
+    .hero-copy{padding:36px}.eyebrow{display:inline-block;background:#ffffff20;border:1px solid #ffffff45;border-radius:99px;padding:5px 11px;font-size:13px}.hero h1{font-size:clamp(28px,4vw,43px);line-height:1.2;margin:16px 0 10px}.hero p{color:#e4edff;max-width:520px;line-height:1.7;margin:0 0 20px}
+    .hero-art{display:grid;place-items:center;font-size:100px;background:radial-gradient(circle at 50% 50%,#ffffff2b,transparent 65%)}
+    .perks{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px}.perk{background:#fff;border:1px solid var(--line);border-radius:13px;padding:15px;display:flex;gap:11px;align-items:center}.perk span{font-size:25px}.perk b{display:block;font-size:14px}.perk small{color:var(--muted)}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:25px 0 14px}.section-head h2{margin:0;font-size:24px}.section-head p{margin:4px 0 0;color:var(--muted);font-size:14px}
+    .categories{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:17px}.chip{border:1px solid var(--line);background:#fff;border-radius:99px;padding:8px 14px;cursor:pointer}.chip.active{background:var(--blue);border-color:var(--blue);color:#fff}
+    .products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.product{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}.product:hover{transform:translateY(-3px);box-shadow:0 10px 25px #18365d12}
+    .product-img{height:145px;display:grid;place-items:center;background:linear-gradient(145deg,#edf4ff,#f9fbff);font-size:62px}.product-body{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}.category-label{font-size:12px;color:var(--blue);font-weight:700}.product h3{font-size:16px;line-height:1.4;margin:0}.desc{font-size:13px;color:var(--muted);line-height:1.5;flex:1}.price{font-size:19px;font-weight:850;color:var(--deep)}.price-note{font-size:11px;color:#9a5a00}.product button{width:100%}
+    .notice{background:#fff8e8;border:1px solid #f4dfae;color:#6e4a00;border-radius:12px;padding:13px 15px;font-size:13px;line-height:1.6;margin:20px 0}
+    .contact{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;margin:28px 0;display:grid;grid-template-columns:1fr 1fr;gap:22px}.contact h2{margin:0 0 9px}.contact p{color:var(--muted);line-height:1.7}.contact a{color:var(--blue);font-weight:750}
+    footer{background:#091c42;color:#dbe6ff;padding:28px 0;margin-top:35px;font-size:13px}.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .modal-backdrop{position:fixed;inset:0;background:#07152db8;display:none;align-items:center;justify-content:center;padding:15px;z-index:30}.modal-backdrop.show{display:flex}.modal{background:#fff;width:min(650px,100%);max-height:92vh;overflow:auto;border-radius:18px;padding:22px}.modal-head{display:flex;justify-content:space-between;align-items:center}.modal-head h2{margin:0}.close{border:0;background:#edf1f7;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:20px}
+    .cart-line{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}.qty{display:flex;align-items:center;gap:8px}.qty button{border:1px solid var(--line);background:#fff;border-radius:6px;width:28px;height:28px;cursor:pointer}.remove{border:0;background:none;color:#b42318;cursor:pointer}.total{display:flex;justify-content:space-between;font-weight:850;font-size:18px;padding:15px 0}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:13px;font-weight:750}.field input,.field textarea,.field select{border:1px solid var(--line);border-radius:9px;padding:11px;width:100%}.field textarea{min-height:75px;resize:vertical}.form-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}.empty{text-align:center;padding:25px;color:var(--muted)}
+    @media(max-width:850px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{grid-template-columns:1fr .45fr}.hero-copy{padding:27px}.hero-art{font-size:75px}}
+    @media(max-width:620px){.head{flex-wrap:wrap;gap:10px}.logo{font-size:19px}.logo-mark{width:38px;height:38px}.search{order:3;flex-basis:100%}.hero{grid-template-columns:1fr}.hero-copy{padding:25px}.hero-art{display:none}.perks{grid-template-columns:1fr}.perk{padding:11px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-img{height:115px;font-size:48px}.product-body{padding:11px}.product h3{font-size:14px}.price{font-size:17px}.contact{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head h2{font-size:21px}}
+  </style>
+</head>
+<body>
+  <div class="top"><div class="wrap"><span>⚡ আপনার ইলেকট্রনিক্স পণ্যের বিশ্বস্ত ঠিকানা</span><span>📞 <a href="tel:01846905460">01846-905460</a></span></div></div>
+  <header><div class="wrap head">
+    <a class="logo" href="#"><span class="logo-mark">⚡</span><span>IMAM BAZAR<small style="display:block;font-size:10px;letter-spacing:2px;color:#65738a">ELECTRONICS & MORE</small></span></a>
+    <form class="search" id="searchForm"><input id="searchInput" placeholder="পণ্য খুঁজুন... যেমন LED, ব্যাটারি" aria-label="পণ্য খুঁজুন"><button type="submit">খুঁজুন</button></form>
+    <button class="cart-btn" id="openCart">🛒 কার্ট (<span id="cartCount">0</span>)</button>
+  </div></header>
+  <main class="wrap">
+    <section class="hero"><div class="hero-copy"><span class="eyebrow">WELCOME TO IMAM BAZAR</span><h1>আপনার প্রয়োজনীয়<br>ইলেকট্রনিক্স পণ্য এক জায়গায়</h1><p>ইলেকট্রনিক্স যন্ত্রাংশ, LED লাইট, ব্যাটারি, পাওয়ার সাপ্লাই এবং আরও অনেক পণ্য খুঁজুন। পছন্দের পণ্য কার্টে যোগ করে WhatsApp-এ অর্ডার পাঠান।</p><a href="#products" class="primary" style="display:inline-block">পণ্য দেখুন ↓</a></div><div class="hero-art" aria-hidden="true">🔌💡</div></section>
+    <section class="perks"><div class="perk"><span>🧰</span><div><b>বিভিন্ন ইলেকট্রনিক্স পণ্য</b><small>দৈনন্দিন ও প্রজেক্টের উপকরণ</small></div></div><div class="perk"><span>💬</span><div><b>সহজে অর্ডার</b><small>WhatsApp-এ অর্ডারের বিবরণ</small></div></div><div class="perk"><span>📞</span><div><b>সরাসরি যোগাযোগ</b><small>01846-905460</small></div></div></section>
+    <section id="products">
+      <div class="section-head"><div><h2>আমাদের পণ্য</h2><p>পণ্য বেছে নিন, তারপর অর্ডার করুন</p></div><span id="productCount" style="font-size:13px;color:var(--muted)"></span></div>
+      <div class="categories" id="categories"></div>
+      <div class="products" id="productGrid"></div>
+    </section>
+    <div class="notice">📌 <b>দাম সম্পর্কে:</b> এখানে দেখানো পণ্য ও দাম নমুনা হিসেবে দেওয়া হয়েছে। বিক্রির আগে নিজের আসল পণ্যের নাম, ছবি, স্টক ও সঠিক দাম বসিয়ে নিন। অর্ডার পাঠানোর আগে মোট দাম ও ডেলিভারি চার্জ ক্রেতার সঙ্গে নিশ্চিত করুন।</div>
+    <section class="contact" id="contact"><div><h2>IMAM BAZAR</h2><p>ইলেকট্রনিক্স পণ্য ও যন্ত্রাংশের জন্য আমাদের সঙ্গে যোগাযোগ করুন। আপনার দোকানের ঠিকানা ও কাজের সময় এখানে যোগ করে নিতে পারবেন।</p><p>📞 ফোন: <a href="tel:01846905460">01846-905460</a></p><p>💬 WhatsApp: <a id="contactWhatsApp" href="https://wa.me/8801846905460" target="_blank" rel="noopener">মেসেজ পাঠান</a></p></div><div><h2>কীভাবে অর্ডার করবেন?</h2><p>১. পণ্য বাছাই করে “কার্টে যোগ করুন” চাপুন।<br>২. কার্ট খুলে পরিমাণ যাচাই করুন।<br>৩. নাম, ফোন ও ঠিকানা লিখুন।<br>৪. WhatsApp-এ অর্ডার পাঠিয়ে দোকান থেকে নিশ্চিতকরণ নিন।</p></div></section>
+  </main>
+  <footer><div class="wrap foot"><span>© <span id="year"></span> IMAM BAZAR. সর্বস্বত্ব সংরক্ষিত।</span><span>Made with care for your business</span></div></footer>
+
+  <div class="modal-backdrop" id="cartModal" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <div class="modal"><div class="modal-head"><h2 id="cartTitle">🛒 আপনার কার্ট</h2><button class="close" data-close="cartModal" aria-label="বন্ধ করুন">×</button></div>
+      <div id="cartItems"></div><div class="total"><span>মোট (নমুনা দাম)</span><span id="cartTotal">৳০</span></div>
+      <form id="orderForm"><div class="section-head"><div><h2 style="font-size:19px">অর্ডারের তথ্য</h2><p>তথ্য পূরণ করে WhatsApp-এ পাঠান</p></div></div>
+        <div class="form-grid">
+          <div class="field"><label for="customerName">আপনার নাম *</label><input id="customerName" required placeholder="নাম লিখুন"></div>
+          <div class="field"><label for="customerPhone">মোবাইল নম্বর *</label><input id="customerPhone" required inputmode="tel" placeholder="01XXXXXXXXX"></div>
+          <div class="field full"><label for="customerAddress">সম্পূর্ণ ঠিকানা *</label><textarea id="customerAddress" required placeholder="বাড়ি/রোড, এলাকা, জেলা"></textarea></div>
+          <div class="field full"><label for="customerNote">অতিরিক্ত নোট (ঐচ্ছিক)</label><input id="customerNote" placeholder="ডেলিভারি বা পণ্যের বিষয়ে"></div>
+        </div>
+        <div class="form-actions"><button type="submit" class="secondary">WhatsApp-এ অর্ডার পাঠান</button><button type="button" class="primary" id="copyOrder">অর্ডার কপি করুন</button></div>
+      </form>
+    </div>
+  </div>
+  <script>
+    // দোকানের আসল পণ্য/দাম দিতে নিচের PRODUCTS তালিকা সম্পাদনা করুন।
+    const PRODUCTS = [
+      {id:1,name:"LED বাল্ব",category:"লাইট",price:120,emoji:"💡",desc:"ঘর ও দোকানের আলোর জন্য।"},
+      {id:2,name:"12V DC ফ্যান",category:"ফ্যান",price:350,emoji:"🌀",desc:"12V DC পাওয়ারে ব্যবহারযোগ্য।"},
+      {id:3,name:"12V ব্যাটারি",category:"ব্যাটারি",price:950,emoji:"🔋",desc:"প্রয়োজন অনুযায়ী ক্ষমতা যাচাই করুন।"},
+      {id:4,name:"পাওয়ার সাপ্লাই",category:"পাওয়ার",price:450,emoji:"🔌",desc:"ভোল্টেজ ও অ্যাম্পিয়ার মিলিয়ে নিন।"},
+      {id:5,name:"ইলেকট্রনিক ক্যাপাসিটর",category:"যন্ত্রাংশ",price:35,emoji:"🧪",desc:"সঠিক µF ও ভোল্টেজ দেখে নিন।"},
+      {id:6,name:"রিলে মডিউল",category:"যন্ত্রাংশ",price:180,emoji:"🧩",desc:"প্রজেক্ট ও কন্ট্রোল সার্কিটে ব্যবহার।"},
+      {id:7,name:"USB চার্জার",category:"চার্জার",price:180,emoji:"🔌",desc:"ডিভাইসের সঙ্গে সামঞ্জস্য যাচাই করুন।"},
+      {id:8,name:"টেস্টার / মাল্টিমিটার",category:"টুলস",price:650,emoji:"🛠️",desc:"ইলেকট্রনিক্স মাপজোখের কাজে।"}
+    ];
+    const CATEGORIES = ["সব পণ্য", ...new Set(PRODUCTS.map(p=>p.category))];
+    const cart = new Map();
+    let activeCategory = "সব পণ্য", searchTerm = "";
+    const money = n => "৳" + Number(n).toLocaleString("bn-BD");
+    const waNumber = "8801846905460";
+    const grid = document.getElementById("productGrid");
+    function renderCategories(){
+      document.getElementById("categories").innerHTML = CATEGORIES.map(c=>`<button class="chip ${c===activeCategory?"active":""}" data-category="${c}">${c}</button>`).join("");
+    }
+    function renderProducts(){
+      const list = PRODUCTS.filter(p=>(activeCategory==="সব পণ্য"||p.category===activeCategory) && (p.name+" "+p.category+" "+p.desc).toLowerCase().includes(searchTerm.toLowerCase()));
+      document.getElementById("productCount").textContent = `${list.length}টি পণ্য`;
+      grid.innerHTML = list.length ? list.map(p=>`<article class="product"><div class="product-img" aria-hidden="true">${p.emoji}</div><div class="product-body"><span class="category-label">${p.category}</span><h3>${p.name}</h3><div class="desc">${p.desc}</div><div class="price">${money(p.price)}</div><div class="price-note">নমুনা দাম</div><button class="secondary" data-add="${p.id}">＋ কার্টে যোগ করুন</button></div></article>`).join("") : '<div class="empty">কোনো পণ্য পাওয়া যায়নি। অন্য নামে খুঁজুন।</div>';
+    }
+    function renderCart(){
+      const items=[...cart.entries()].map(([id,qty])=>({product:PRODUCTS.find(p=>p.id===id),qty})).filter(x=>x.product);
+      document.getElementById("cartCount").textContent=items.reduce((s,x)=>s+x.qty,0);
+      document.getElementById("cartItems").innerHTML=items.length?items.map(({product:p,qty})=>`<div class="cart-line"><div><b>${p.name}</b><div style="font-size:13px;color:#65738a">${money(p.price)} × ${qty}</div></div><div class="qty"><button data-minus="${p.id}" aria-label="একটি কমান">−</button><b>${qty}</b><button data-plus="${p.id}" aria-label="একটি বাড়ান">+</button></div><button class="remove" data-remove="${p.id}">মুছুন</button></div>`).join(""):'<div class="empty">আপনার কার্ট খালি। পণ্য যোগ করুন।</div>';
+      document.getElementById("cartTotal").textContent=money(items.reduce((s,x)=>s+x.product.price*x.qty,0));
+    }
+    function orderText(){
+      const items=[...cart.entries()].map(([id,qty])=>({product:PRODUCTS.find(p=>p.id===id),qty})).filter(x=>x.product);
+      const total=items.reduce((s,x)=>s+x.product.price*x.qty,0);
+      return `🛍️ *নতুন অর্ডার — IMAM BAZAR*\\n\\n`+items.map((x,i)=>`${i+1}. ${x.product.name} — ${x.qty} × ${money(x.product.price)} = ${money(x.qty*x.product.price)}`).join("\\n")+`\\n\\n*নমুনা মোট: ${money(total)}*\\n(চূড়ান্ত দাম ও ডেলিভারি চার্জ নিশ্চিত করতে হবে)\\n\\n*ক্রেতার তথ্য*\\nনাম: ${document.getElementById("customerName").value.trim()}\\nফোন: ${document.getElementById("customerPhone").value.trim()}\\nঠিকানা: ${document.getElementById("customerAddress").value.trim()}\\nনোট: ${document.getElementById("customerNote").value.trim()||"নেই"}`;
+    }
+    function openCart(){document.getElementById("cartModal").classList.add("show");renderCart()}
+    function closeCart(){document.getElementById("cartModal").classList.remove("show")}
+    document.getElementById("categories").addEventListener("click",e=>{const b=e.target.closest("[data-category]");if(!b)return;activeCategory=b.dataset.category;renderCategories();renderProducts()});
+    grid.addEventListener("click",e=>{const b=e.target.closest("[data-add]");if(!b)return;const id=Number(b.dataset.add);cart.set(id,(cart.get(id)||0)+1);renderCart();b.textContent="✓ যোগ হয়েছে";setTimeout(()=>{if(b.isConnected)b.textContent="＋ কার্টে যোগ করুন"},900)});
+    document.getElementById("cartItems").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const id=Number(b.dataset.plus||b.dataset.minus||b.dataset.remove);if(b.dataset.plus!==undefined)cart.set(id,(cart.get(id)||0)+1);else if(b.dataset.minus!==undefined){const n=(cart.get(id)||0)-1;if(n<=0)cart.delete(id);else cart.set(id,n)}else if(b.dataset.remove!==undefined)cart.delete(id);renderCart()});
+    document.getElementById("openCart").addEventListener("click",openCart);
+    document.querySelectorAll("[data-close]").forEach(b=>b.addEventListener("click",closeCart));
+    document.getElementById("cartModal").addEventListener("click",e=>{if(e.target.id==="cartModal")closeCart()});
+    document.getElementById("searchForm").addEventListener("submit",e=>{e.preventDefault();searchTerm=document.getElementById("searchInput").value.trim();renderProducts();document.getElementById("products").scrollIntoView({behavior:"smooth"})});
+    document.getElementById("orderForm").addEventListener("submit",e=>{e.preventDefault();if(cart.size===0){alert("আগে কার্টে অন্তত একটি পণ্য যোগ করুন।");return}window.open("https://wa.me/"+waNumber+"?text="+encodeURIComponent(orderText()),"_blank","noopener")});
+    document.getElementById("copyOrder").addEventListener("click",async()=>{if(cart.size===0){alert("আগে কার্টে অন্তত একটি পণ্য যোগ করুন।");return}try{await navigator.clipboard.writeText(orderText());alert("অর্ডারের বিবরণ কপি হয়েছে।")}catch(err){prompt("নিচের অর্ডার কপি করুন:",orderText())}});
+    document.getElementById("year").textContent=new Date().getFullYear();
+    renderCategories();renderProducts();renderCart();
+  </script>
+</body>
+</html>
